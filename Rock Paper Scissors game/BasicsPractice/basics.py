@@ -9,6 +9,10 @@ class State(Enum):#creating a variable called State.INACTIVE = 0 or State.ACTIVE
 print(State.INACTIVE.value)#or
 print(State(1))
 
+
+#GLOBAL COMMANDS
+    #sorted() - print(sorted(variable_example))
+
 #INPUTS
 how_old = input('How old are you?')
 print('You are ' + how_old)
@@ -50,20 +54,66 @@ num2 = complex(2,3)
 
 print(num2.real, num2.imag)
 
-#LIST + IN operator
+#LIST() + IN operator
 dog = ['string', 27, "strings", True] # - group together common values like an ARRAY IN JS
 print("strings" in dog)
 
+dogss = ["butch", 24, 35, "checkers"]
+dogss.append("wolf")# SAME AS *PUSH IN JS AND *POP = REMOVE, SHIFT? & UNSHIFT?
+print(dogss)
+
+dogss = ["butch", 24, 35, "checkers"]
+dogss.remove(24)
+print(dogss)
+
+dogss = ["butch", 24, 35, "checkers"]
+dogss.insert(2, "hello")
+print(dogss)
+
+dogss = ["butch", 24, 35, "checkers"]
+dogss[1:1] = ["hola", 20]#WHEN USING SLICES USE BRACKERS INSTEAD
+print(dogss)
+
+itemss = ["apple", 'orange', 'bananna', 'grapes', 'pear']#only can use sort to arrange same type only
+itemss.sort()
+print(itemss)
+
+
 # bool() for booleans
 
-# list() for lists
 
 
 
-# tuple() for tuples
+
+# tuple() for tuples - objects that can't be modified - grab values by using indexing
+list_names = ('Roger', 'Alex', 'Adam')
+list_names[-1]
+list_names.index('Adam')
+len(list_names)
+print('Roger' in list_names)
+
+
+
 # range() for ranges
-# dict() for dictionaries
-# set() for sets
+# dict() for dictionaries - allow you to create key value pairs - name= 'roger'
+dog = { 'name': 'adam', 'age': 29}
+dog['name'] = 'trottie'
+#print(dog.get())
+print(dog.pop('name'))#popitem - retreive and remove last item
+#dog.keys(), values, items*converts to a list, len, del dog['color]
+
+
+
+
+# set() for sets - immutable can be changed * CAN CONVERT TO A *LIST and CANNOT HAVE 2 OF SAME SET
+#AND CAN USE COMPARE OPERATORS
+namename1 = {'rog', 'adam'}
+namename2 = {'adams'}
+
+mod = namename1 | namename2
+print(mod)#{'rog'}
+
+
 
 
 ages = float(40)
@@ -101,8 +151,16 @@ print('trottie'.upper()) #to get a uppercase version of a string
 
 #STRING CHAR AND SLICING
 names = 'trottie is going to accomplish something great'
-print(names[3:7])#start and end indicies
+print(names[:])#start and end indicies
 
+#FUNCTIONS
 
+def hello(name='mctrotto'):#can make a default arg if don't specify when we call at the bottom example
+  print('Hello ' + name)
+hello('Trot')#must call in order to print
+hello()
 
-
+def hello(name, age):
+  print('Hello ' + name + ', you are ' + str(age))
+hello('Trot')#must call in order to print
+hello()
